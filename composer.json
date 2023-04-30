@@ -1,0 +1,22 @@
+{
+    "name": "nathanstryker/post-location",
+    "description": "Allows posts to be geotagged with a location displayed on a map in the post content.",
+    "type": "wordpress-plugin",
+    "authors": [
+        {
+            "name": "Nathan Stryker",
+            "email": "nstryker@gmail.com"
+        }
+    ],
+    "require": {
+        "composer/installers": "~1.0",
+        "geocoder-php/google-maps-provider": "^4.6",
+        "php-http/guzzle6-adapter": "^2.0",
+        "php-http/message": "^1.13"
+    },
+    "config": {
+        "allow-plugins": {
+            "composer/installers": true
+        }
+    }
+}
