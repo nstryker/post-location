@@ -1,11 +1,11 @@
 <?php return array(
     'root' => array(
-        'pretty_version' => 'dev-trunk',
-        'version' => 'dev-trunk',
+        'pretty_version' => 'dev-main',
+        'version' => 'dev-main',
         'type' => 'wordpress-plugin',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '1590e8e0c894f633250648752768d1180fe89fb4',
+        'reference' => '34c1bce2c2d3e23f97855d4901850905832bd247',
         'name' => 'nathanstryker/post-location',
         'dev' => true,
     ),
@@ -80,12 +80,12 @@
             'dev_requirement' => false,
         ),
         'nathanstryker/post-location' => array(
-            'pretty_version' => 'dev-trunk',
-            'version' => 'dev-trunk',
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
             'type' => 'wordpress-plugin',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '1590e8e0c894f633250648752768d1180fe89fb4',
+            'reference' => '34c1bce2c2d3e23f97855d4901850905832bd247',
             'dev_requirement' => false,
         ),
         'php-http/async-client-implementation' => array(
@@ -210,6 +210,15 @@
             'replaced' => array(
                 0 => '*',
             ),
+        ),
+        'squizlabs/php_codesniffer' => array(
+            'pretty_version' => '3.7.2',
+            'version' => '3.7.2.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../squizlabs/php_codesniffer',
+            'aliases' => array(),
+            'reference' => 'ed8e00df0a83aa96acf703f8c2979ff33341f879',
+            'dev_requirement' => false,
         ),
         'symfony/polyfill-intl-idn' => array(
             'pretty_version' => 'v1.25.0',
