@@ -9,7 +9,7 @@
  * Plugin Name: Post Location
  * Plugin URI:  https://github.com/nstryker/post-location
  * Description: Allows posts to be geotagged with a location displayed on a map in the post content.
- * Version:     0.1.0
+ * Version:     0.1.3
  * Author:      Nathan Stryker
  * Author URI:  http://nstryker.com/
  * License:     GPL-2.0+
@@ -22,7 +22,7 @@ namespace Post_Location;
 
 defined( 'ABSPATH' ) || exit();
 
-const VERSION     = '0.1.0';
+const VERSION     = '0.1.3';
 const PLUGIN_FILE = __FILE__;
 
 /**
