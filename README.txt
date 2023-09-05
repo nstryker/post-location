@@ -23,6 +23,9 @@ This plugin creates a metabox on post pages allowing you to add a Google Maps co
 
 == Changelog ==
 
+= 0.1.2 =
+* Track assets.
+
 = 0.1.1 =
 * Remove vendor from tracking.
 
