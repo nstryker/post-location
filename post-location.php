@@ -1,37 +1,83 @@
 <?php
 /**
- * Plugin Name: Post Location
- * Description: Allows posts to be geotagged with a location displayed on a map in the post content.
- * Author:      Nathan Stryker
- * Version:     0.0.1
+ * Post Location bootstrap file
  *
- * @package PL
+ * @since             0.0.1
+ * @package           Post_Location
+ *
+ * @wordpress-plugin
+ * Plugin Name: Post Location
+ * Plugin URI:  https://github.com/nstryker/post-location
+ * Description: Allows posts to be geotagged with a location displayed on a map in the post content.
+ * Version:     0.1.0
+ * Author:      Nathan Stryker
+ * Author URI:  http://nstryker.com/
+ * License:     GPL-2.0+
+ * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
+ * Text Domain: post-location
+ * Domain Path: /i18n/languages
  */
 
-defined('ABSPATH') || exit();
+namespace Post_Location;
 
-if (is_readable(__DIR__ . '/vendor/autoload.php')) {
-    require __DIR__ . '/vendor/autoload.php';
+defined( 'ABSPATH' ) || exit();
+
+const VERSION     = '0.1.0';
+const PLUGIN_FILE = __FILE__;
+
+/**
+ * Autoloads packages. Prompts for composer install is the autoloader isn't found.
+ */
+try {
+	require __DIR__ . '/vendor/autoload.php';
+} catch ( \Exception $e ) {
+	$composer_error = array(
+		/* translators: %1$s is replaced with "composer install" and should not be translated, %2$s is replaced with the plugin path */
+		'message'   => esc_html__( 'Your installation of Post Location plugin is incomplete. Please run %1$s within the %2$s directory.', 'post-location' ),
+		'command'   => 'composer install',
+		'directory' => esc_html( str_replace( ABSPATH, '', __DIR__ ) ),
+	);
+
+	if ( defined( 'WP_DEBUG' ) && WP_DEBUG ) {
+		error_log( // phpcs:ignore
+			sprintf(
+				$composer_error['message'],
+				'`' . $composer_error['command'] . '`',
+				'`' . $composer_error['directory'] . '`'
+			)
+		);
+	}
+
+	add_action(
+		'admin_notices',
+		function () {
+			?>
+			<div class="notice notice-error">
+				<p>
+					<?php
+					printf(
+						$composer_error['message'], // phpcs:ignore
+						'<code>' . $composer_error['command'] . '</code>', // phpcs:ignore
+						'<code>' . $composer_error['directory'] . '</code>' // phpcs:ignore
+					);
+					?>
+				</p>
+			</div>
+			<?php
+		}
+	);
+
+	return;
 }
 
-spl_autoload_register(function ($name) {
-    if (0 === strpos($name, 'PL\\')) {
-        $fileparts = explode('\\', strtolower(preg_replace('#([a-zA-Z0-9])(?=[A-Z])#', '$1-', str_replace('PL\\', '', $name))));
-        $filename  = sprintf('%s.php', end($fileparts));
-        $filepath  = __DIR__ . DIRECTORY_SEPARATOR . implode(DIRECTORY_SEPARATOR, array_merge($fileparts, [ $filename ]));
+use Pablo_Pacheco\WP_Namespace_Autoloader\WP_Namespace_Autoloader;
+$autoloader = new WP_Namespace_Autoloader(
+	array(
+		'directory'        => __DIR__,
+		'namespace_prefix' => 'Post_Location',
+		'classes_dir'      => 'includes',
+	)
+);
+$autoloader->init();
 
-        if (file_exists($filepath)) {
-            require_once $filepath;
-        } else {
-            throw new Exception(sprintf(__('Unable to load %1$s at %2$s.'), $name, $filepath));
-        }
-    }
-}, true, true);
-
-PL\Data\Geocode::init();
-PL\Data\Location::init();
-PL\Data\Settings::init();
-PL\Service\Geocoder::init();
-PL\Views\Map::init();
-PL\Views\Location::init();
-PL\Views\Settings::init();
+Main::bootstrap();

@@ -1,23 +1,38 @@
 {
-    "name": "nathanstryker/post-location",
+	"name": "nstryker/post-location",
     "description": "Allows posts to be geotagged with a location displayed on a map in the post content.",
-    "type": "wordpress-plugin",
+	"homepage": "http://nstryker.com/",
+	"type": "wordpress-plugin",
     "authors": [
         {
             "name": "Nathan Stryker",
             "email": "nstryker@gmail.com"
         }
     ],
-    "require": {
-        "composer/installers": "~1.0",
+	"keywords": [],
+	"license": "GPL-2.0-or-later",
+	"require": {
+		"php": ">=7.3",
         "geocoder-php/google-maps-provider": "^4.6",
+		"http-interop/http-factory-guzzle": "^1.2",
+		"pablo-sg-pacheco/wp-namespace-autoloader": "dev-master",
         "php-http/guzzle6-adapter": "^2.0",
-        "php-http/message": "^1.13",
-        "squizlabs/php_codesniffer": "*"
+        "php-http/message": "^1.13"
+    },
+	"autoload": {
+		"psr-4": {
+			"post_location\\": "includes/"
+		}
     },
     "config": {
         "allow-plugins": {
             "composer/installers": true
-        }
-    }
+        },
+		"config": {
+			"preferred-install": "dist"
+		}
+	},
+	"require-dev": {
+		"squizlabs/php_codesniffer": "^3.7"
+	}
 }

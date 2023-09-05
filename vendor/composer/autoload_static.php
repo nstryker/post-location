@@ -4,14 +4,14 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInite7a4380f8936b558b0a874c6746dc79a
+class ComposerStaticInitf26768a98729295c36cd9ef0ffdf91c4
 {
     public static $files = array (
         '7b11c4dc42b3b3023073cb14e519683c' => __DIR__ . '/..' . '/ralouphie/getallheaders/src/getallheaders.php',
+        'a0edc8309cc5e1d60e3047b5df6b7052' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/functions_include.php',
         'e69f7f6ee287b969198c3c9d6777bd38' => __DIR__ . '/..' . '/symfony/polyfill-intl-normalizer/bootstrap.php',
         '25072dd6e2470089de65ae7bf11d3109' => __DIR__ . '/..' . '/symfony/polyfill-php72/bootstrap.php',
         'c964ee0ededf28c96ebd9db5099ef910' => __DIR__ . '/..' . '/guzzlehttp/promises/src/functions_include.php',
-        'a0edc8309cc5e1d60e3047b5df6b7052' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/functions_include.php',
         'f598d06aa772fa33d905e87be6398fb1' => __DIR__ . '/..' . '/symfony/polyfill-intl-idn/bootstrap.php',
         '9c67151ae59aff4788964ce8eb2a0f43' => __DIR__ . '/..' . '/clue/stream-filter/src/functions_include.php',
         '37a3dc5111fe8f707ab4c132ef1dbc62' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/functions_include.php',
@@ -19,6 +19,10 @@ class ComposerStaticInite7a4380f8936b558b0a874c6746dc79a
     );
 
     public static $prefixLengthsPsr4 = array (
+        'p' => 
+        array (
+            'post_location\\' => 14,
+        ),
         'S' => 
         array (
             'Symfony\\Polyfill\\Php72\\' => 23,
@@ -29,11 +33,13 @@ class ComposerStaticInite7a4380f8936b558b0a874c6746dc79a
         array (
             'Psr\\Http\\Message\\' => 17,
             'Psr\\Http\\Client\\' => 16,
+            'Pablo_Pacheco\\WP_Namespace_Autoloader\\' => 38,
         ),
         'H' => 
         array (
             'Http\\Promise\\' => 13,
             'Http\\Message\\' => 13,
+            'Http\\Factory\\Guzzle\\' => 20,
             'Http\\Discovery\\' => 15,
             'Http\\Client\\' => 12,
             'Http\\Adapter\\Guzzle6\\' => 21,
@@ -49,12 +55,15 @@ class ComposerStaticInite7a4380f8936b558b0a874c6746dc79a
         ),
         'C' => 
         array (
-            'Composer\\Installers\\' => 20,
             'Clue\\StreamFilter\\' => 18,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
+        'post_location\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/includes',
+        ),
         'Symfony\\Polyfill\\Php72\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-php72',
@@ -70,10 +79,15 @@ class ComposerStaticInite7a4380f8936b558b0a874c6746dc79a
         'Psr\\Http\\Message\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/http-message/src',
+            1 => __DIR__ . '/..' . '/psr/http-factory/src',
         ),
         'Psr\\Http\\Client\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/http-client/src',
+        ),
+        'Pablo_Pacheco\\WP_Namespace_Autoloader\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/pablo-sg-pacheco/wp-namespace-autoloader/src',
         ),
         'Http\\Promise\\' => 
         array (
@@ -81,8 +95,12 @@ class ComposerStaticInite7a4380f8936b558b0a874c6746dc79a
         ),
         'Http\\Message\\' => 
         array (
-            0 => __DIR__ . '/..' . '/php-http/message/src',
-            1 => __DIR__ . '/..' . '/php-http/message-factory/src',
+            0 => __DIR__ . '/..' . '/php-http/message-factory/src',
+            1 => __DIR__ . '/..' . '/php-http/message/src',
+        ),
+        'Http\\Factory\\Guzzle\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/http-interop/http-factory-guzzle/src',
         ),
         'Http\\Discovery\\' => 
         array (
@@ -120,10 +138,6 @@ class ComposerStaticInite7a4380f8936b558b0a874c6746dc79a
         array (
             0 => __DIR__ . '/..' . '/willdurand/geocoder',
         ),
-        'Composer\\Installers\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers',
-        ),
         'Clue\\StreamFilter\\' => 
         array (
             0 => __DIR__ . '/..' . '/clue/stream-filter/src',
@@ -138,9 +152,9 @@ class ComposerStaticInite7a4380f8936b558b0a874c6746dc79a
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInite7a4380f8936b558b0a874c6746dc79a::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInite7a4380f8936b558b0a874c6746dc79a::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInite7a4380f8936b558b0a874c6746dc79a::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInitf26768a98729295c36cd9ef0ffdf91c4::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitf26768a98729295c36cd9ef0ffdf91c4::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInitf26768a98729295c36cd9ef0ffdf91c4::$classMap;
 
         }, null, ClassLoader::class);
     }
