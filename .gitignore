@@ -7,7 +7,7 @@ assets/js*
 
 # Ignore node_modules and vendors everywhere
 node_modules
-vendors
+vendor
 
 # Editors
 *.esproj

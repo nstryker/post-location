@@ -23,6 +23,9 @@ This plugin creates a metabox on post pages allowing you to add a Google Maps co
 
 == Changelog ==
 
+= 0.1.1 =
+* Remove vendor from tracking.
+
 = 0.1.0 =
 * Complete refactor of the plugin using the [this WordPress plugin boilerplate](https://github.com/saucal/WordPress-Plugin-Boilerplate) as structural inspiration.
 
