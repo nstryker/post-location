@@ -46,7 +46,7 @@ final class Meta {
 						$user_id = get_current_user_id();
 						$message = sprintf(
 							/* translators: %s is replaced with the error message and should not be translated */
-							__( 'Error: %s', 'post_location' ),
+							__( 'Error: %s', 'post-location' ),
 							$geocode->get_error_message()
 						);
 

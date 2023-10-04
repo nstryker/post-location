@@ -63,7 +63,7 @@ final class Map {
 				<?php
 				printf(
 					/* translators: Placeholders come from inputs and should not be translated. */
-					esc_html__( 'Location: %1$s (%2$s,%3$s)', 'post_location' ),
+					esc_html__( 'Location: %1$s (%2$s,%3$s)', 'post-location' ),
 					esc_html( $location ),
 					$coordinates->getLatitude(), // phpcs:ignore
 					$coordinates->getLongitude() // phpcs:ignore

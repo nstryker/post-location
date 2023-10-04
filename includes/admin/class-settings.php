@@ -30,8 +30,8 @@ final class Settings {
 	 */
 	public static function register_settings() {
 		register_setting( 'pl_options_group', 'pl_options', array( __CLASS__, 'validate_inputs' ) );
-		add_settings_section( 'pl_api_settings', __( 'API Settings', 'post_location' ), array( __CLASS__, 'settings_intro_view' ), 'post-location' );
-		add_settings_field( 'pl_api_key', 'API Key', array( __CLASS__, 'settings_inputs_view' ), 'post-location', 'pl_api_settings' );
+		add_settings_section( 'pl_api_settings', __( 'API Settings', 'post-location' ), array( __CLASS__, 'settings_intro_view' ), 'post-location' );
+		add_settings_field( 'pl-api-key', 'API Key', array( __CLASS__, 'settings_inputs_view' ), 'post-location', 'pl_api_settings' );
 	}
 
 	/**
@@ -63,7 +63,7 @@ final class Settings {
 	public static function settings_intro_view() {
 		$google_api_url = 'https://developers.google.com/console';
 
-		printf( '<p>%s<a href="%s" target="_blank">%s</a></p>', esc_html__( 'Fetch your Google API key from the ', 'post_location' ), esc_url( $google_api_url ), esc_html__( 'Google API page', 'post_location' ) );
+		printf( '<p>%s<a href="%s" target="_blank">%s</a></p>', esc_html__( 'Fetch your Google API key from the ', 'post-location' ), esc_url( $google_api_url ), esc_html__( 'Google API page', 'post-location' ) );
 	}
 
 	/**
@@ -75,7 +75,7 @@ final class Settings {
 		$api_key = self::get_api_key();
 
 		printf(
-			'<input id="pl_api_key" name="pl_options[api_key]" type="text" value="%s" />',
+			'<input id="pl-api-key" name="pl_options[api_key]" type="text" value="%s" />',
 			esc_attr( $api_key )
 		);
 	}
@@ -98,7 +98,7 @@ final class Settings {
 	 * @return void
 	 */
 	public static function add_settings_settings_page() {
-		add_options_page( __( 'Post Location Settings', 'post_location' ), __( 'Post Location', 'post_location' ), 'manage_options', 'post-location', array( __CLASS__, 'settings_page_view' ) );
+		add_options_page( __( 'Post Location Settings', 'post-location' ), __( 'Post Location', 'post-location' ), 'manage_options', 'post-location', array( __CLASS__, 'settings_page_view' ) );
 	}
 
 	/**
@@ -109,11 +109,11 @@ final class Settings {
 	public static function settings_page_view() {
 		?>
 
-		<h2><?php esc_html_e( 'Post Location Settings', 'post_location' ); ?></h2>
+		<h2><?php esc_html_e( 'Post Location Settings', 'post-location' ); ?></h2>
 		<form action="options.php" method="post">
 			<?php settings_fields( 'pl_options_group' ); ?>
 			<?php do_settings_sections( 'post-location' ); ?>
-			<input name="submit" class="button button-primary" type="submit" value="<?php esc_attr_e( 'Save', 'post_location' ); ?>" />
+			<input name="submit" class="button button-primary" type="submit" value="<?php esc_attr_e( 'Save', 'post-location' ); ?>" />
 		</form>
 
 		<?php

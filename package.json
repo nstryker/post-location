@@ -1,0 +1,28 @@
+{
+	"name": "post_location",
+	"description": "Allows posts to be geotagged with a location displayed on a map in the post content.",
+	"authors": [
+		{
+			"name": "Nathan Stryker",
+			"email": "nstryker@gmail.com"
+		}
+	],
+	"license": "GPL-2.0-or-later",
+	"engines": {
+		"node": "16",
+		"npm": "8"
+	},
+	"scripts": {
+		"format": "wp-scripts format",
+		"lint:css": "wp-scripts lint-style",
+		"lint:php": "composer run lint",
+		"lint": "npm run lint:php && npm run lint:css"
+	},
+	"devDependencies": {
+		"@wordpress/eslint-plugin": "13.2.0",
+		"@wordpress/scripts": "24.2.0",
+		"@wordpress/stylelint-config": "21.1.0",
+		"eslint": "8.23.1",
+		"sanitize-html": "2.7.2"
+	}
+}

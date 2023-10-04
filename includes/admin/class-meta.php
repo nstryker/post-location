@@ -29,7 +29,7 @@ final class Meta {
 	 */
 	public static function add_meta_box() {
 		if ( \Post_Location\Admin\Settings::get_api_key() ) {
-			add_meta_box( 'pl_location', __( 'Post Location', 'post_location' ), array( __CLASS__, 'meta_box_view' ), 'post', 'side' );
+			add_meta_box( 'pl-location', __( 'Post Location', 'post-location' ), array( __CLASS__, 'meta_box_view' ), 'post', 'side' );
 		}
 	}
 
@@ -45,8 +45,8 @@ final class Meta {
 		$error    = get_transient( "pl_error_{$post->ID}_{$user_id}" );
 		?>
 
-		<label for="pl_location_input"><?php esc_html_e( 'Street Address', 'post_location' ); ?></label>
-		<input class="postbox" id="pl_location_input" name="pl_location" value="<?php echo esc_attr( $location ); ?>" />
+		<label for="pl-location-input"><?php esc_html_e( 'Street Address', 'post-location' ); ?></label>
+		<input class="postbox" id="pl-location-input" name="pl_location" value="<?php echo esc_attr( $location ); ?>" />
 		<?php wp_nonce_field( 'pl_location', 'pl_location_nonce' ); ?>
 
 		<?php if ( $error ) : ?>

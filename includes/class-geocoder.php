@@ -63,7 +63,7 @@ final class Geocoder {
 						'exception',
 						sprintf(
 							/* translators: %s is the user input location and should not be translated. */
-							esc_html__( 'Location "%s" not found.', 'post_location' ),
+							esc_html__( 'Location "%s" not found.', 'post-location' ),
 							$location
 						)
 					);
