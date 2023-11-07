@@ -1,10 +1,26 @@
 /**
  * Public-facing CSS.
  */
-#pl-map {
+.pl-map-fig {
+    border: solid 1px #ccc;
+    border-radius: 0.5rem;
+    max-width: 650px;
+	padding: 0.5rem;
+    width: 100%;
+}
+.pl-map-fig div {
 	border: none;
 	display: block;
 	height: 30vh;
 	max-width: 650px;
 	width: 100%;
+}
+.pl-map-fig figcaption {
+	text-align: center;
+}
+.pl-map-fig address {
+	margin-bottom: 0;
+}
+.pl-map-fig figcaption span {
+	font-size: small;
 }

@@ -1,8 +1,8 @@
 === Post Location ===
 Contributors: nstryker
 Tags: location,maps,Google maps,embeded map
-Tested up to: 6.2.2
-Stable tag: trunk
+Tested up to: 6.3.2
+Stable tag: 0.1.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -22,6 +22,9 @@ This plugin creates a metabox on post pages allowing you to add a Google Maps co
 6. Once the post is published or updated, the post will include a map of the location below the content.
 
 == Changelog ==
+
+= 0.1.5 =
+* A11y updates, light styling.
 
 = 0.1.4 =
 * Add linters.

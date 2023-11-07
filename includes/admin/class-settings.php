@@ -29,9 +29,14 @@ final class Settings {
 	 * @return void
 	 */
 	public static function register_settings() {
+		$api_key_label = sprintf(
+			'<label for="pl-api-key">%s</label>',
+			__( 'API Key', 'post-location' )
+		);
+
 		register_setting( 'pl_options_group', 'pl_options', array( __CLASS__, 'validate_inputs' ) );
 		add_settings_section( 'pl_api_settings', __( 'API Settings', 'post-location' ), array( __CLASS__, 'settings_intro_view' ), 'post-location' );
-		add_settings_field( 'pl-api-key', 'API Key', array( __CLASS__, 'settings_inputs_view' ), 'post-location', 'pl_api_settings' );
+		add_settings_field( 'pl-api-key', $api_key_label, array( __CLASS__, 'settings_inputs_view' ), 'post-location', 'pl_api_settings' );
 	}
 
 	/**

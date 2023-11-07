@@ -44,9 +44,14 @@ final class Meta {
 		$user_id  = get_current_user_id();
 		$error    = get_transient( "pl_error_{$post->ID}_{$user_id}" );
 		?>
-
-		<label for="pl-location-input"><?php esc_html_e( 'Street Address', 'post-location' ); ?></label>
-		<input class="postbox" id="pl-location-input" name="pl_location" value="<?php echo esc_attr( $location ); ?>" />
+		<div class="components-base-control">
+			<div class="components-base-control__field">
+				<label class="components-base-control__label" for="pl-location-input">
+					<?php esc_html_e( 'Street Address', 'post-location' ); ?>
+				</label>
+				<textarea class="components-textarea-control__input" id="pl-location-input" name="pl_location"><?php echo esc_attr( $location ); ?></textarea>
+			</div>
+		</div>
 		<?php wp_nonce_field( 'pl_location', 'pl_location_nonce' ); ?>
 
 		<?php if ( $error ) : ?>

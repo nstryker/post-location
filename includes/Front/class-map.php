@@ -58,19 +58,24 @@ final class Map {
 				);
 				ob_start();
 				?>
-
-				<p>
-				<?php
-				printf(
-					/* translators: Placeholders come from inputs and should not be translated. */
-					esc_html__( 'Location: %1$s (%2$s,%3$s)', 'post-location' ),
-					esc_html( $location ),
-					$coordinates->getLatitude(), // phpcs:ignore
-					$coordinates->getLongitude() // phpcs:ignore
-				);
-				?>
-				</p>
-				<div id="pl-map"></div>
+				<figure class="pl-map-fig">
+					<div id="pl-map"></div>
+					<figcaption>
+						<address>
+							<?php echo esc_html( $location ); ?>
+						</address>
+						<span>
+							<?php
+							printf(
+								/* translators: Placeholders come from inputs and should not be translated. */
+								esc_html__( 'Coordinates: %1$s %2$s', 'post-location' ),
+								$coordinates->getLatitude(), // phpcs:ignore
+								$coordinates->getLongitude() // phpcs:ignore
+							);
+							?>
+						</span>
+					</figcaption>
+				<figure>
 				<?php
 				wp_print_inline_script_tag( $map_script );
 
